@@ -26,11 +26,28 @@ class HomePage {
         cy.get('li.cart-item div[class="product-info"] p').each(($el, index, $list) => {
             const productName = $el.text()
             if (productName.includes("Carrot")) {
-                expect(true).to.be.true
+                expect(productName).to.contain('Carrot')
             }
-
         })
     }
 
+    clickOnRemoveProductFromCart() {
+        return cy.get('div[class="cart-preview active"] a[class="product-remove"]').click()
+    }
+
+    productInTheCart() {
+        return cy.get('div[class="cart-preview active"] p[class="product-name"]')
+    }
+
+    messageEmptyCart() {
+        cy.get('div[class="cart-preview active"] div[class="empty-cart"] h2').then(function (message) {
+            const emptyCartMessage = message.text()
+            if (emptyCartMessage.includes("You cart is empty!")) {
+                expect(emptyCartMessage).to.equal('You cart is empty!')
+
+            }
+        })
+
+    }
 }
 export default HomePage;

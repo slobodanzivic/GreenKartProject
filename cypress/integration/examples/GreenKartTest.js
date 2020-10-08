@@ -28,4 +28,14 @@ describe('GreenKart test', function () {
         homePage.clickOnCart()
         homePage.validateProductInTheCart()
     })
+
+    it('Remove product from the cart', function () {
+        homePage.clickOnSearchField().type('ca').should('have.value', 'ca')
+        homePage.chooseProductAndclickOnAddToCartBtn()
+        homePage.clickOnCart()
+        homePage.clickOnRemoveProductFromCart()
+        homePage.productInTheCart().should('not.be.visible')
+        homePage.messageEmptyCart()
+
+    })
 })
