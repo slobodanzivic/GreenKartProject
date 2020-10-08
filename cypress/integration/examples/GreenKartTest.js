@@ -19,6 +19,7 @@ describe('GreenKart test', function(){
 
     it('Check how many products are there in the page', function(){
         cy.get('h4.product-name').should('have.length', '30')
+        
 
     })
 })
