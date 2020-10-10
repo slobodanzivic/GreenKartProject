@@ -66,8 +66,11 @@ class HomePage {
         return cy.get('button').click()
     }
 
-    message () {
-        return cy.get('[style="color:green;font-size:25px"]')
+    validateMessage() {
+        cy.get('[style="color:green;font-size:25px"]').then(function(textMessage){
+            let  message = textMessage.text()
+            expect(message).to.equal("Thank you, your order has been placed successfully  You'll be redirected to Home page shortly!!")
+        })
     }
 }
 export default HomePage;

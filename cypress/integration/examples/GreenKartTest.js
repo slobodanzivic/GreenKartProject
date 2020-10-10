@@ -49,7 +49,8 @@ describe('GreenKart test', function () {
         cy.get('div.products > div > button').click()
         homePage.clickOnTermsAndConditions()
         homePage.clickOnProceedBtn()
-        homePage.message()
+        homePage.validateMessage()
+        
 
     })
 })
