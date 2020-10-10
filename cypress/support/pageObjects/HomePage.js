@@ -54,6 +54,10 @@ class HomePage {
         return cy.get('.cart-preview> .action-block>  button').click()
     }
 
+    goToNewUrl () {
+      return cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/cart')
+    }
+
     clickOnPlaceOrder() {
         return cy.get('div.products > div > button').click()
     }
