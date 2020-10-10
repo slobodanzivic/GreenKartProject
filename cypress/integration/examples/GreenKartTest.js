@@ -38,4 +38,18 @@ describe('GreenKart test', function () {
         homePage.messageEmptyCart()
 
     })
+
+    it('Proceed to Checkout', function () {
+        homePage.clickOnSearchField().type('ca').should('have.value', 'ca')
+        homePage.chooseProductAndclickOnAddToCartBtn()
+        homePage.clickOnCart()
+        //cy.contains('PROCEED TO CHECKOUT').click()
+        homePage.clickOnProceedToCheckOutBtn()
+        cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/cart')
+        cy.get('div.products > div > button').click()
+        homePage.clickOnTermsAndConditions()
+        homePage.clickOnProceedBtn()
+        homePage.message()
+
+    })
 })

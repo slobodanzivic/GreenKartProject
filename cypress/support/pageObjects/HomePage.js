@@ -49,5 +49,25 @@ class HomePage {
         })
 
     }
+
+    clickOnProceedToCheckOutBtn() {
+        return cy.get('.cart-preview> .action-block>  button').click()
+    }
+
+    clickOnPlaceOrder() {
+        return cy.get('div.products > div > button').click()
+    }
+
+    clickOnTermsAndConditions() {
+        return cy.get('.chkAgree').click()
+    }
+
+    clickOnProceedBtn() {
+        return cy.get('button').click()
+    }
+
+    message () {
+        return cy.get('[style="color:green;font-size:25px"]')
+    }
 }
 export default HomePage;
