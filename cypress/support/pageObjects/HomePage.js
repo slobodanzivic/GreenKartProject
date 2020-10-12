@@ -42,5 +42,14 @@ class HomePage {
     goToNewUrl() {
         return cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/cart')
     }
+
+    clickOnPlusToIncrementProductQuantity () {
+        return cy.get(':nth-child(1) > .stepper-input > .increment').click()
+    }
+
+    clickOnMinusToDecrementProductQuantity () {
+        return cy.get(':nth-child(1) > .stepper-input > .decrement').click()
+    }
+
 }
 export default HomePage;
