@@ -1,9 +1,11 @@
 ///<reference types="Cypress"/>
 import HomePage from '../../support/pageObjects/HomePage.js'
+import CartPage from '../../support/pageObjects/CartPage.js'
 
 describe('GreenKart test', function () {
 
     const homePage = new HomePage()
+    const cartPage = new CartPage()
 
     beforeEach(() => {
         cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
@@ -35,7 +37,7 @@ describe('GreenKart test', function () {
         homePage.clickOnCart()
         homePage.clickOnRemoveProductFromCart()
         homePage.productInTheCart().should('not.be.visible')
-        homePage.messageEmptyCart()
+        cartPage.messageEmptyCart()
 
     })
 
@@ -43,13 +45,13 @@ describe('GreenKart test', function () {
         homePage.clickOnSearchField().type('ca').should('have.value', 'ca')
         homePage.chooseProductAndclickOnAddToCartBtn()
         homePage.clickOnCart()
-        homePage.clickOnProceedToCheckOutBtn()
+        cartPage.clickOnProceedToCheckOutBtn()
         homePage.goToNewUrl()
-        homePage.clickOnPlaceOrder()
-        homePage.clickOnTermsAndConditions()
-        homePage.clickOnProceedBtn()
-        homePage.validateMessage()
-        
+        cartPage.clickOnPlaceOrder()
+        cartPage.clickOnTermsAndConditions()
+        cartPage.clickOnProceedBtn()
+        cartPage.validateMessage()
+
 
     })
 })
