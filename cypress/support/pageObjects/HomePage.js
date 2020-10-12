@@ -51,5 +51,9 @@ class HomePage {
         return cy.get(':nth-child(1) > .stepper-input > .decrement').click()
     }
 
+    clickOnSelect () {
+        return cy.get('select').click()
+    }
+
 }
 export default HomePage;
