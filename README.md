@@ -66,4 +66,10 @@
 
 `npm run test`
 
+## Cypress `Dashboard`
+[Cypress Dashboard] (https://dashboard.cypress.io/projects/xn94cb/runs/1/specs)
+
+## Cypress `Video`
+[Cypress Video  GreenKartTest](https://dashboard.cypress.io/projects/xn94cb/runs/1/specs/a74983f6-a23c-4959-b7a2-aaca2d448d69/video)
+
 
